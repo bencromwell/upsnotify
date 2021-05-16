@@ -1,7 +1,15 @@
 # upsnotify
 
-environment variables: NOTIFYTYPE and UPSNAME
-argument: only arg provided is the event message
+Called by UPSmon, in turn calls Mailgun's API.
+
+See `upsmon.conf` at `/etc/nut/upsmon.conf`
+Place this binary in the path defined as `NOTIFYCMD`:
+
+```
+NOTIFYCMD /usr/local/bin/upsnotify
+```
+
+UPSmon calls the script with the environment variables `NOTIFYTYPE` and `UPSNAME`. The only arg provided is the event message.
 
 ## config
 
